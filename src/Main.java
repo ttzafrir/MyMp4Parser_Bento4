@@ -1,13 +1,19 @@
 import com.axiosys.bento4.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
-        String path = "C:/Users/ttzaf/Desktop/Best Samples/48cc1a938e8830c93f87741505cfdd8d41c3bfaeddd0a4b3c154495560a9f4d7";
+        String path = "C:\\Users\\ttzafrir\\Desktop\\test_b_vid.mp4";
         AtomList atoms = new AtomList(path);
-
+        AtomParent test = atoms;
+        Atom atom = AtomUtils.findAtom(test, "");
+        System.out.println(atom);
+        //ArrayList<String> bagOfAtomsDir =new ArrayList<>();
+        //System.out.println(atoms.getBagOfDir());
+        /*
         if (args.length > 1) {
             Atom atom = AtomUtils.findAtom(atoms, path);
             if (atom != null) {
