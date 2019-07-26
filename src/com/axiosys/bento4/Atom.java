@@ -31,6 +31,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 
 public abstract class Atom {
     public final static int TYPE_MOOV = 0x6d6f6f76;
@@ -151,6 +152,9 @@ public abstract class Atom {
     
     public String toString(String indentation) {
         return indentation+"[" + typeString(type) + "] size=" + getHeaderSize() + "+" + getPayloadSize();
+    }
+
+    public void toStringType(ArrayList<StringBuffer> bag, StringBuffer s){ bag.add(s.append("/" + typeString(type)));
     }
     
     public String toString() {

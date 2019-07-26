@@ -68,15 +68,16 @@ public class AtomList implements AtomParent {
         return result.toString();
     }
 
-    public String getBagOfDir() {
-        StringBuffer result = new StringBuffer();
-        String sep = "/";
+    public ArrayList<StringBuffer> getBagOfDir() throws IOException {
+        ArrayList<StringBuffer> bag = new ArrayList<>();
+
         for (int i=0; i<atoms.size(); i++) {
+            StringBuffer result = new StringBuffer();
             Atom atom = (Atom)atoms.get(i);
-            result.append(atom.toString() + sep);
+            atom.toStringType(bag, result);
         }
 
-        return result.toString();
+        return bag;
     }
 
 }

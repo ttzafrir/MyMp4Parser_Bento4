@@ -98,4 +98,20 @@ public class ContainerAtom extends Atom implements AtomParent {
         
         return result.toString();  
     }
+
+    public void toStringType(ArrayList<StringBuffer> bag, StringBuffer s) {
+        super.toStringType(bag, s);
+        if (children.size()==0){
+            return;
+        } else {
+
+        for (int i=0; i<children.size(); i++) {
+            StringBuffer result = new StringBuffer(s);
+            //result.append("/");
+            ((Atom) children.get(i)).toStringType(bag, result);
+        }
+        }
+
+    }
+
 }
