@@ -74,6 +74,7 @@ public class AtomFactory {
         // remember current file offset
         long start = source.getFilePointer();
 
+
         // read atom size
         int size = source.readInt();
 
@@ -91,8 +92,10 @@ public class AtomFactory {
 
         if (size < 0) {
             // something is corrupted
-            throw new InvalidFormatException("invalid atom size");
-            //size = -size;
+            //throw new InvalidFormatException("invalid atom size");
+            //size = (int)start - 8;
+            //size = 0;
+            return null;
         }
         
         // read atom type

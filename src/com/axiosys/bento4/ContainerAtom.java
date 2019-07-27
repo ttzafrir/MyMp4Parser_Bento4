@@ -89,7 +89,7 @@ public class ContainerAtom extends Atom implements AtomParent {
     }
 
     public String toString(String indentation) {
-        StringBuffer result = new StringBuffer();
+        StringBuffer result = new StringBuffer("");
         result.append(super.toString(indentation));
         for (int i=0; i<children.size(); i++) {
             result.append("\n");
