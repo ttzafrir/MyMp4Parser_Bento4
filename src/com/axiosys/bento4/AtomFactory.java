@@ -77,6 +77,7 @@ public class AtomFactory {
         // read atom size
         int size = source.readInt();
 
+
         if (size == 0) {
             // atom extends to end of file
             size = (int)(source.length()-start);
@@ -91,6 +92,7 @@ public class AtomFactory {
         if (size < 0) {
             // something is corrupted
             throw new InvalidFormatException("invalid atom size");
+            //size = -size;
         }
         
         // read atom type

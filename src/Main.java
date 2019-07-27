@@ -15,10 +15,11 @@ public class Main {
     public static void main(String[] args) throws IOException, InvalidFormatException {
         //String path = "C:\\Users\\ttzaf\\Desktop\\Research\\benign\\Plant - 24105.mp4";
 
-        String folderDir = "C:\\Users\\ttzaf\\Desktop\\Research\\benign";
-        List<String> listOfDir = getFilesDir(folderDir);
+        String folderDir = "C:\\Users\\ttzaf\\Desktop\\Research\\benign"; // Source folder
+        List<String> listOfDir = getFilesDir(folderDir); // Get list of file paths from source folder
         Map<String, Integer> map = new HashMap<String, Integer>();
 
+        /* create a map that count the frequency of different boxes combinations */
         for(String path : listOfDir) {
             AtomList atoms = new AtomList(path);
             ArrayList<StringBuffer> Dir = atoms.getBagOfDir();
@@ -33,25 +34,23 @@ public class Main {
                 }
             }
         }
-        //System.out.println(map.toString());
 
-/*       Files.walk(Paths.get("C:\\Users\\ttzaf\\Desktop\\Research\\benign"))
-                .filter(Files::isRegularFile)
-                .collect(Collectors.toList());*/
-
-
-/*        String eol = System.getProperty("line.separator");
+        /*Save map to test.csv*/
+        String eol = System.getProperty("line.separator");
 
         try (Writer writer = new FileWriter("C:\\Users\\ttzaf\\Desktop\\test.csv")) {
             for (HashMap.Entry<String, Integer> entry : map.entrySet()) {
                 writer.append(entry.getKey())
                         .append(',')
-                        .append(entry.getValue())
+                        .append(entry.getValue().toString())
                         .append(eol);
             }
         } catch (IOException ex) {
             ex.printStackTrace(System.err);
-        }*/
+        }
+        //System.out.println(map.toString());
+
+
         //ArrayList<String> bagOfAtomsDir =new ArrayList<>();
         /*
         if (args.length > 1) {
