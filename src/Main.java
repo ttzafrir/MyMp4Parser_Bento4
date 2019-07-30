@@ -13,14 +13,14 @@ import java.util.stream.Stream;
 public class Main {
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
-        //String path = "C:\\Users\\ttzaf\\Desktop\\Research\\benign\\bug.mp4";
-
-        String folderDir = "C:\\Users\\ttzaf\\Desktop\\Research\\benign"; // Source folder
+        String path = "C:\\Users\\ttzaf\\Desktop\\Research\\benign\\bug.mp4";
+/*
+        String folderDir = "C:\\Users\\ttzaf\\Desktop\\Jupiter N Projects\\Research\\benign samples"; // Source folder
         //String folderDir = "C:\\Users\\ttzaf\\Desktop\\new_mp4";
         List<String> listOfDir = getFilesDir(folderDir); // Get list of file paths from source folder
         Map<String, Integer> map = new HashMap<String, Integer>();
 
-        /* create a map that count the frequency of different boxes combinations */
+        *//* create a map that count the frequency of different boxes combinations *//*
         assert listOfDir != null;
         for(String path : listOfDir) {
             AtomList atoms = new AtomList(path);
@@ -38,10 +38,10 @@ public class Main {
         }
         System.out.println(map);
 
-        /*Save map to test.csv*/
+        *//*Save map to test.csv*//*
         String eol = System.getProperty("line.separator");
 
-        try (Writer writer = new FileWriter("C:\\Users\\ttzaf\\Desktop\\test.csv")) {
+        try (Writer writer = new FileWriter("C:\\Users\\ttzaf\\Desktop\\Malicious&Benign.csv")) {
             for (HashMap.Entry<String, Integer> entry : map.entrySet()) {
                 writer.append(entry.getKey())
                         .append(',')
@@ -51,11 +51,11 @@ public class Main {
         } catch (IOException ex) {
             ex.printStackTrace(System.err);
         }
-        //System.out.println(map.toString());
+        //System.out.println(map.toString());*/
 
 
-        //ArrayList<String> bagOfAtomsDir =new ArrayList<>();
-        /*
+
+        AtomList atoms = new AtomList(path);
         if (args.length > 1) {
             Atom atom = AtomUtils.findAtom(atoms, path);
             if (atom != null) {
@@ -65,9 +65,9 @@ public class Main {
             }
         } else {
             System.out.println(atoms);
-        }*/
+        }
+        System.out.println("next");
 
-/*
         File file = new File(path);
         Track[] tracks = file.getMovie().getTracks();
         for (int i=0; i<tracks.length; i++) {
@@ -76,7 +76,7 @@ public class Main {
         }
         System.out.println(file.getMovie().getMoovAtom());
         System.out.println("to_string");
-*/
+
 
     }
 
